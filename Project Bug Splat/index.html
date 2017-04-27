@@ -1,0 +1,479 @@
+<!DOCTYPE HTML>
+<!-- Kevin Lin -->
+<html>
+	<head>
+		<title>Bug Splat!</title>
+		<link rel = "stylesheet" href = "style.css" />
+		<style></style>
+		<script src = "utilities.js"></script>
+		<script>
+		function initialize()
+		{
+			// creating all variables and constants used in the program. (there's probably a better way to do this)
+			SPLAT = 0, NSPLAT = 1;
+			NChange = "images/bug.png";
+			SChange = "images/splat.png";
+			bug1Element = document.getElementById("bug1");
+			bug2Element = document.getElementById("bug2");
+			bug3Element = document.getElementById("bug3");
+			bug4Element = document.getElementById("bug4");
+			bug5Element = document.getElementById("bug5");
+			bug6Element = document.getElementById("bug6");
+			bug7Element = document.getElementById("bug7");
+			bug8Element = document.getElementById("bug8");
+			bug9Element = document.getElementById("bug9");
+			bug10Element = document.getElementById("bug10");
+			bug11Element = document.getElementById("bug11");
+			bug12Element = document.getElementById("bug12");
+			bug13Element = document.getElementById("bug13");
+			bug14Element = document.getElementById("bug14");
+			bug15Element = document.getElementById("bug15");
+			bossbugE = document.getElementById("bossbug");
+			commentElement = document.getElementById("comment");
+			
+			// stands for Bug-Number-Status Needed for changing the images for each bug.
+			b1s = NSPLAT;
+			b2s = NSPLAT;
+			b3s = NSPLAT;
+			b4s = NSPLAT;
+			b5s = NSPLAT;
+			b6s = NSPLAT;
+			b7s = NSPLAT;
+			b8s = NSPLAT;
+			b9s = NSPLAT;
+			b10s = NSPLAT;
+			b11s = NSPLAT;
+			b12s = NSPLAT;
+			b13s = NSPLAT;
+			b14s = NSPLAT;
+			b15s = NSPLAT;
+			// all the variables for the status of each used message
+			usedmsg1 = 0;
+			usedmsg2 = 0;
+			usedmsg3 = 0;
+			usedmsg4 = 0;
+			usedmsg5 = 0;
+			usedmsg6 = 0;
+			usedmsg7 = 0;
+			// variable for the number of bugs left, used in order to determine the DIRE messages.
+			bugsleft = 15;
+			splatnum = 0;
+			finaldisplay('reset');
+		}
+		
+		// user clicks on img which runs a function to set that particular img to SPLAT.
+		// back end representation of: how many bugs there are left, how many splats have happened
+		function splat(bugnum)
+		{
+			if (splatnum <= 15)
+			{
+				if (bugnum == 'b1s')
+				{
+					if (b1s == NSPLAT)
+					{
+						b1s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 1;	
+					}
+					return -1;
+				}
+				if (bugnum == 'b2s')
+				{
+					if (b2s == NSPLAT)
+					{
+						b2s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 2;						
+					}
+					return -1;
+				}
+				if (bugnum == 'b3s')
+				{
+					if (b3s == NSPLAT)
+					{
+						b3s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 3;	
+					}
+					return -1;
+				}
+				if (bugnum == 'b4s')
+				{
+					if (b4s == NSPLAT)
+					{
+						b4s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 4;	
+					}
+					return -1;
+				}
+				if (bugnum == 'b5s')
+				{
+					if (b5s == NSPLAT)
+					{
+						b5s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 5;
+					}
+					return -1;
+				}
+				if (bugnum == 'b6s')
+				{
+					if (b6s == NSPLAT)
+					{
+						b6s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 6;
+					}
+					return -1;
+				}
+				if (bugnum == 'b7s')
+				{
+					if (b7s == NSPLAT)
+					{
+						b7s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 7;
+					}
+					return -1;
+				}
+				if (bugnum == 'b8s')
+				{
+					if (b8s == NSPLAT)
+					{
+						b8s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 8;
+					}
+					return -1;
+				}
+				if (bugnum == 'b9s')
+				{
+					if (b9s == NSPLAT)
+					{
+						b9s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 9;
+					}
+					return -1;
+				}
+				if (bugnum == 'b10s')
+				{
+					if (b10s == NSPLAT)
+					{
+						b10s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 10;
+					}
+					return -1;
+				}
+				if (bugnum == 'b11s')
+				{
+					if (b11s == NSPLAT)
+					{
+						b11s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 11;
+					}
+					return -1;
+				}
+				if (bugnum == 'b12s')
+				{
+					if (b12s == NSPLAT)
+					{
+						b12s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 12;
+					}
+					return -1;
+				}
+				if (bugnum == 'b13s')
+				{
+					if (b13s == NSPLAT)
+					{
+						b13s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 13;
+					}
+					return -1;
+				}
+				if (bugnum == 'b14s')
+				{
+					if (b14s == NSPLAT)
+					{
+						b14s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 14;
+					}
+					return -1;
+				}
+				if (bugnum == 'b15s')
+				{
+					if (b15s == NSPLAT)
+					{
+						b15s = SPLAT;
+						bugsleft -= 1;
+						splatnum += 1;
+						return 15;
+					}
+					return -1;
+				}
+			}
+			return -1;
+		}
+		// returns the message to be placed in the commentElement based on the value of splatnum from splat()
+		function splatmsg()
+		{
+			//condition if splat is odd or even. even = 'ouch!' odd = random message [defiant random msgs when bugsleft > 8 /\ else: mercy random msgs when bugs] {total defiant msgs = 3, total mercy msgs = 4, last msg = ouch & You killed us all} 
+			msgValue = 999;
+			if (bugsleft > 8)
+			{
+				do
+				{
+					if (splatnum % 2 == 0)
+					{
+						msgValue = getRandomInteger(1,3);
+						if (msgValue == 1 && usedmsg1 == 1 || msgValue == 2 && usedmsg2 == 1 || msgValue == 3 && usedmsg3 == 1)
+						{
+							msgValue = 999;
+						}
+						else
+						{
+							if (msgValue == 1)
+							{
+								msgValue = "You shall not pass!";
+								usedmsg1 = 1;
+							}
+							else
+							{
+								if (msgValue == 2)
+								{
+									msgValue = "We will crush you!";
+									usedmsg2 = 1;
+								}
+								else
+								{
+									msgValue = "We shall bring the wrath of Bleezus upon you!";
+									usedmsg3 = 1;
+								}
+							}
+						}
+					}
+					else
+					{
+						msgValue = "Ouch!";
+					}
+				} while (msgValue == 999)
+			}
+			else
+			{
+				if (bugsleft == 0)
+					return "That's it! Now Big MAMA Bleezus is ANGRY!";
+				else
+				{
+					do
+					{
+						if (splatnum % 2 == 0)
+						{
+							msgValue = getRandomInteger(4,7);
+							if (msgValue == 4 && usedmsg4 == 1 || msgValue == 5 && usedmsg5 == 1 || msgValue == 6 && usedmsg6 == 1 || msgValue == 7 && usedmsg7 == 1)
+							{
+								msgValue = 999;
+							}
+							else
+							{
+								if (msgValue == 4)
+								{
+									msgValue = "Oh no, not Johnny! Please don't splat us anymore!";
+									usedmsg4 = 1;
+								}
+								else
+								{
+									if (msgValue == 5)
+									{
+										msgValue = "Okay, we get it, just stop killing us, please.";
+										usedmsg5 = 1;
+									}
+									else
+									{
+										if (msgValue == 6)
+										{
+											msgValue = "Please spare us, we'll stop bothering you.";
+											usedmsg6 = 1;
+										}
+										else
+										{
+											msgValue = "Please don't kill us! We'll do anything!";
+											usedmsg7 = 1;
+										}
+									}
+								}
+							}
+						}
+						else
+						{
+							msgValue = "Ouch!";
+						}
+					} while (msgValue == 999)
+				}
+			}
+			return msgValue;
+		}
+		function changeimg(whichbug)
+		{
+			if (whichbug == 1)
+			{
+				bug1Element.src = SChange;				
+			}
+			if (whichbug == 2)
+			{
+				bug2Element.src = SChange;				
+			}
+			if (whichbug == 3)
+			{
+				bug3Element.src = SChange;				
+			}
+			if (whichbug == 4)
+			{
+				bug4Element.src = SChange;				
+			}
+			if (whichbug == 5)
+			{
+				bug5Element.src = SChange;				
+			}
+			if (whichbug == 6)
+			{
+				bug6Element.src = SChange;				
+			}
+			if (whichbug == 7)
+			{
+				bug7Element.src = SChange;				
+			}
+			if (whichbug == 8)
+			{
+				bug8Element.src = SChange;				
+			}
+			if (whichbug == 9)
+			{
+				bug9Element.src = SChange;				
+			}
+			if (whichbug == 10)
+			{
+				bug10Element.src = SChange;
+			}
+			if (whichbug == 11)
+			{
+				bug11Element.src = SChange;
+			}
+			if (whichbug == 12)
+			{
+				bug12Element.src = SChange;
+			}
+			if (whichbug == 13)
+			{
+				bug13Element.src = SChange;
+			}
+			if (whichbug == 14)
+			{
+				bug14Element.src = SChange;
+			}
+			if (whichbug == 15)
+			{
+				bug15Element.src = SChange;
+			}
+			if (splatnum == 15)
+			{
+				bug1Element.src = "";
+				bug2Element.src = "";
+				bug3Element.src = "";
+				bug4Element.src = "";
+				bug5Element.src = "";
+				bug6Element.src = "";
+				bug7Element.src = "";
+				bug8Element.src = "";
+				bug9Element.src = "";
+				bug10Element.src = "";
+				bug11Element.src = "";
+				bug12Element.src = "";
+				bug13Element.src = "";
+				bug14Element.src = "";
+				bug15Element.src = "";
+				bossbugE.src = "images/scarybug.png";
+			}
+			return whichbug;
+		}
+		// display each bug if they are SPLAT or NSPLAT. also displays the message output
+		function finaldisplay(bugstatus)
+		{
+			if (bugstatus == 'reset')
+			{
+				commentElement.innerHTML = "You will never defeat us!";
+				bug1Element.src = NChange;
+				bug2Element.src = NChange;
+				bug3Element.src = NChange;
+				bug4Element.src = NChange;
+				bug5Element.src = NChange;
+				bug6Element.src = NChange;
+				bug7Element.src = NChange;
+				bug8Element.src = NChange;
+				bug9Element.src = NChange;
+				bug10Element.src = NChange;
+				bug11Element.src = NChange;
+				bug12Element.src = NChange;
+				bug13Element.src = NChange;
+				bug14Element.src = NChange;
+				bug15Element.src = NChange;
+				bossbugE.src = "";
+			}
+			else
+			{
+				if (changeimg(splat(bugstatus)) > 0)
+					commentElement.innerHTML = splatmsg();
+			}
+		}
+		</script>
+	</head>
+	
+	<body onload = "initialize();">
+	<div>
+	<!-- all the images for each bug (there's probably a better way to do this) -->
+	<img id = "bug1" onclick = "finaldisplay('b1s');" src = "images/bug.png"/>
+	<img id = "bug2" onclick = "finaldisplay('b2s');" src = "images/bug.png"/>
+	<img id = "bug3" onclick = "finaldisplay('b3s');" src = "images/bug.png"/>
+	<img id = "bug4" onclick = "finaldisplay('b4s');" src = "images/bug.png"/>
+	<img id = "bug5" onclick = "finaldisplay('b5s');" src = "images/bug.png"/>
+	</br>
+	<img id = "bug6" onclick = "finaldisplay('b6s');" src = "images/bug.png"/>
+	<img id = "bug7" onclick = "finaldisplay('b7s');" src = "images/bug.png"/>
+	<img id = "bug8" onclick = "finaldisplay('b8s');" src = "images/bug.png"/>
+	<img id = "bug9" onclick = "finaldisplay('b9s');" src = "images/bug.png"/>
+	<img id = "bug10" onclick = "finaldisplay('b10s');" src = "images/bug.png"/>
+	</br>
+	<img id = "bug11" onclick = "finaldisplay('b11s');" src = "images/bug.png"/>
+	<img id = "bug12" onclick = "finaldisplay('b12s');" src = "images/bug.png"/>
+	<img id = "bug13" onclick = "finaldisplay('b13s');" src = "images/bug.png"/>
+	<img id = "bug14" onclick = "finaldisplay('b14s');" src = "images/bug.png"/>
+	<img id = "bug15" onclick = "finaldisplay('b15s');" src = "images/bug.png"/>
+	</br>
+	<img id = "bossbug" src = ""/>
+	</div>
+	<!-- comment div that will change with the display function -->
+	<div id = "comment"> You will never defeat us! </div>
+	<!-- reset button as bob ross -->
+	<div> <img id = "reset" onclick = "initialize();" src = "images/bobross.jpg"/></div>
+	</body>
+</html>

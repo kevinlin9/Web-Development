@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<!-- Kevin Lin -->
+<html>
+	<head>
+		<title>Famous Quotes and Cool Facts!</title>
+		<link rel = "stylesheet" href = "style.css" />
+		<style></style>
+		<script src = "utilities.js"></script>
+		<script>
+		function initialize()
+		{
+			quoteE = document.getElementById("quote");
+			factE = document.getElementById("fact");
+			quoteA = ["Lets make a Happy Tree", "Lets make a Happy Cloud", "Lets make a Happy Little Tree", "Lets make a Happy Little Cloud", "Lets make a Happy Mountain", "Lets make a Happy Little Bush", "Lets give the tree some friends", "The director is mean (KappaRoss)", "Every day is <b> Great </b> when you paint", "If you <b> Believe </b> You Can <b>Achieve</b>", "You can do anything that you want to do", "All you have to do is start believing"];
+			factA = ["I was in the United States Air Force","I didn't invent my painting style. I learned it from another how-to television painter, William Alexander","I have a missing finger","I permed my hair as a cost-saving measure", "I paint in the basement :D"];
+		}
+		function rndQuote()
+		{
+			quoteE.innerHTML = quoteA[getRandomInteger(0,quoteA.length - 1)];
+		}
+		function rndFact()
+		{
+			factE.innerHTML = factA[getRandomInteger(0,factA.length - 1)];
+		}
+		</script>
+	</head>
+	
+	<body onload = "initialize();">
+	<img class = "background" src = "images/background.jpg"/>
+	<h1 class = "heading">~[Qeew Fects and Quoes abuut Bebby Ressy]~</h1>
+	<button class = "cool" onclick = "rndQuote();"> Click on me for a cool quote!</button> 
+	<h2 id = "quote"> </h2> </br>
+	<h2 id = "fact"> </h2> </br>
+	<button class = "cool" onclick = "rndFact();"> Click on me for a cool fact! </button> <br/>
+	<ul>
+		<li><a href = "index.html" target = "_self"> Home </a></li>
+		<li><a href = "bobrossbg.html" target = "_self">Bobby Rossy's Cool Background </a></li>
+		<li><a href = "bobrosstl.html" target = "_self">A Basic Rundown of My Life</a> </li>
+		<li><a href = "bobrossPaintings.html" target = "_self">Beautiful Paintings by Bobby Rossy</a></li>
+		<li><a href = "bobrossFamous.html"  class= "currentpage" target = "_self">My Favorite Catchphrases and Cool Facts</a></li>
+	</ul>
+	</body>
+</html>

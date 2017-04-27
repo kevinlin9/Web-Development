@@ -1,0 +1,117 @@
+.background
+{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	z-index:-1;
+}
+
+.face
+{
+	float:left;
+	width:150px;
+	height:auto;
+}
+
+ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	overflow: hidden;
+	background-color: pink;
+}
+
+li 
+{
+    float: center;
+}
+
+a
+{
+	display: block;
+    padding: 10px;
+    font: 20pt orange calibri;
+}
+
+li a
+{
+	text-align: center;
+	text-decoration: none;
+}
+
+li a:hover:not(.currentpage)
+{
+    background-color: #dddddd;
+}
+
+.currentpage
+{
+	background-color: limegreen;
+}
+
+.heading
+{
+	font:25pt papyrus;
+	color: blue;
+	text-shadow: 0 0 10px pink;
+	height: 80px;
+	text-align:center;
+	background-image:url("images/confetti.jpg");
+}
+h2
+{
+	text-align:center;
+	color: brown;
+	font-family: papyrus;
+	font-size: 30pt;
+	height: 20pt;
+	text-shadow: 0 0 10px pink;	
+}
+
+div
+{
+	text-align:center;
+}
+
+div span
+{
+	font:20pt brown comic sans ms;
+}
+
+.content
+{
+	background-color: orange;
+	color: brown;
+}
+
+video
+{
+	float:left;
+	height:450px;
+	width: 30%;
+	padding: 10px;
+}
+table
+{
+	margin-left:15%;
+	font-family: garamond;
+	font-size: 20pt;
+	background-color: pink;
+	color: green;
+}
+.special
+{
+	background-image:url("images/confetti.jpg");
+}
+button
+{
+	font: 18pt comic sans ms;
+	color: white;
+	text-shadow: 0 0 20px black;	
+	background-image: url("images/backross.png");
+	background-repeat: no-repeat;
+	background-size:contain;
+	padding:10px;
+}

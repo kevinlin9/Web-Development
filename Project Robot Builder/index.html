@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!-- Kevin Lin -->
+<html>
+	<head>
+		<title>Smash Character Builder</title>
+		<style>
+			body
+			{
+				background-color: orange;
+			}
+			span
+			{
+				font-family: comic sans ms;
+				color: green;
+			}
+			h2
+			{
+				font-family: arial;
+				color: blue;
+			}
+			button
+			{
+				font-family: forte;
+				font-size: 15pt;
+				background-color: rgb(250, 100, 150);
+			}
+			div
+			{
+				font-size: 20pt;
+			}
+			img
+			{
+				height: 100px;
+				width: 200px;
+			}
+			div#center
+			{
+				text-align: center;
+			}
+		</style>
+		<script> 
+			function initialize()
+			{
+					strengthLevel = document.getElementById("strStat");
+					defenseLevel = document.getElementById("defStat");
+					speedLevel = document.getElementById("spdStat");
+					strLevel = 100;
+					defLevel = 100;
+					spdLevel = 100;
+					strength = 1;
+					defense = 2;
+					speed = 3;
+					
+					offensiveStatus = document.getElementById("wepStatus");
+					defensiveStatus = document.getElementById("shieldStatus");
+					isOffensive = false
+					isDefensive = false
+					
+					weightStatus = document.getElementById("weightType");
+					
+					smashballElement = document.getElementById("smashball");
+					blueballElement = document.getElementById("bluesmashball");
+					enlargeHeight = 300 + "px";
+					enlargeWidth = 400 + "px";
+					normalHeight = 100 + "px";
+					normalWidth = 200 + "px";
+			}
+			function StatLevelChange(statType,change)
+			{
+				if (statType == strength)
+				{
+					strLevel += change;
+					if (strLevel < 0)
+					{
+						alert("The stat levels of the character cannot go below 0.");
+						strLevel = 0;
+						return;
+					}
+				}
+				if (statType == defense)
+				{
+					defLevel += change;
+					if (defLevel < 0)
+					{
+						alert("The stat levels of the character cannot go below 0.");
+						defLevel = 0;
+						return;
+					}
+				}
+				if (statType == speed)
+				{
+					spdLevel += change;
+					if (spdLevel < 0)
+					{
+						alert("The stat levels of the character cannot go below 0.");
+						spdLevel = 0;
+						return;
+					}
+				}
+			}
+			function DisplayStatLevelChange(statType)
+			{
+				if (statType == strength)
+				{
+					strengthLevel.innerHTML = strLevel;
+				}
+				if (statType == defense)
+				{
+					defenseLevel.innerHTML = defLevel;
+				}
+				if (statType == speed)
+				{
+					speedLevel.innerHTML = spdLevel;
+				}
+			}
+			function togglemodes(mode)
+			{
+				if (mode == strength)
+				{
+					isOffensive = !isOffensive;
+				}
+				if (mode == defense)
+				{
+					isDefensive = !isDefensive;
+				}
+			}
+			function UpdateMode()
+			{
+				if (isOffensive)
+				{
+					offensiveStatus.innerHTML = " Active";
+				}
+				else 
+				{
+					offensiveStatus.innerHTML = " Inactive";
+				}
+				if (isDefensive)
+				{
+					defensiveStatus.innerHTML = " Active";
+				}
+				else 
+				{
+					defensiveStatus.innerHTML = " Inactive";
+				}
+			}
+			function ChangeWeight(weightValue)
+			{
+				if (weightValue == "fastfaller")
+				{
+					weightStatus.innerHTML = " Fast Faller";
+				}
+				if (weightValue == "lightfloaty")
+				{
+					weightStatus.innerHTML = " Light Floaty";
+				}
+				if (weightValue == "heavytank")
+				{
+					weightStatus.innerHTML = " Heavy Tank";
+				}
+				if (weightValue == "defaultWeight")
+				{
+					weightStatus.innerHTML = " Default Medium Weight";
+				}
+			}
+			function changeImageSize(ball)
+			{
+				if (ball == 'smash')
+				{
+						smashballElement.style.height = enlargeHeight;
+						smashballElement.style.width = enlargeWidth;
+				}
+				else
+				{
+						smashballElement.style.height = normalHeight;
+						smashballElement.style.width = normalWidth;
+				}
+				if (ball == 'blue')
+				{
+						blueballElement.style.height = enlargeHeight;
+						blueballElement.style.width = enlargeWidth;
+				}
+				else
+				{
+						blueballElement.style.height = normalHeight;
+						blueballElement.style.width = normalWidth;
+				}
+			}
+		</script>
+	</head>
+	<body onload = "initialize();">
+		<p>
+			<div> <h2> Smash Character	Builder </h2> </div>
+			<div> Strength: <span id = "strStat"> 100 </span> </div>
+			<div> Defense: <span id = "defStat"> 100 </span> </div>
+			<div> Speed: <span id = "spdStat"> 100 </span> </div>
+			<div> Offensive Weapon Status:<span id = "wepStatus"> Inactive </span> </div>
+			<div> Defensive Shield Status:<span id = "shieldStatus"> Inactive </span> </div>
+			<div> Weight:  <span id = "weightType">Default Medium Weight</span> </div>
+		</p>
+		
+		<p>	<button onclick = "StatLevelChange(1,10);DisplayStatLevelChange(1);"> Increase Strength by 10 </button> 
+		<button onclick = "StatLevelChange(1,-10);DisplayStatLevelChange(1);"> Decrease Strength by 10 </button> </p>
+		<p>	<button onclick = "StatLevelChange(2,10);DisplayStatLevelChange(2);"> Increase Defense by 10 </button> 
+		<button onclick = "StatLevelChange(2,-10);DisplayStatLevelChange(2);"> Decrease Defense by 10 </button> </p>
+		<p>	<button onclick = "StatLevelChange(3,10);DisplayStatLevelChange(3);"> Increase Speed by 10 </button> 
+		<button onclick = "StatLevelChange(3,-10);DisplayStatLevelChange(3);"> Decrease Speed by 10 </button> </p>
+		
+		<p>	<button onclick = "togglemodes(1);UpdateMode();"> Activate/Deactivate Offensive Weapon </button> 
+		<button onclick = "togglemodes(2);UpdateMode();"> Activate/Deactivate Defensive Shield </button> </p>
+		
+		<p> <button onclick = "ChangeWeight('fastfaller');"> Weight Type: Fast Faller </button>
+		<button onclick = "ChangeWeight('lightfloaty');"> Weight Type: Light Floaty </button>
+		<button onclick = "ChangeWeight('heavytank');"> Weight Type: Heavy Tank </button> 
+		<button onclick = "ChangeWeight('defaultWeight');"> Weight Type: Default Medium Weight </button> </p>
+		
+		<div id = "center"><img id = "smashball" src = "smashballimage/smash ball.png" onclick = "changeImageSize('smash');"/>
+		<img id = "bluesmashball" src = "smashballimage/blue smash ball.png" onclick = "changeImageSize('blue');"/>
+		</div>
+	</body>
+</html>

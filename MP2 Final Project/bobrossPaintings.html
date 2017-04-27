@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<!-- Kevin Lin -->
+<html>
+	<head>
+		<title>Paintings - Bob Ross</title>
+		<link rel = "stylesheet" href = "style.css" />
+		<style>
+		#marque
+		{
+			border: 2px solid brown;
+			height:600px;
+			overflow: auto;
+			width: 80%;
+			margin-left:10%;
+		}
+		#marque div#banner
+		{
+			 display:inline-block;
+			 height: 100%;
+			 width: 100%;
+		}
+		.spacer
+		{
+			height: 50px;
+			display:inline-block;
+			float:left;
+			width:100%;
+		}
+		img.painting
+		{
+			 width:100%;
+			 display:inline-block;
+			 height:600px;
+			 float:left;
+		}
+		</style>
+		<script src = "utilities.js"></script>
+		<script>
+			function initialize()
+			{
+				scrollSpeed = 10; move = true; recall = "";
+				Emarque = document.getElementById("marque");
+				Emarque.style.overflow = "hidden";
+				marque();
+			}
+			// this is where the marque javascript function will be made
+			function marque()
+			{
+				clearTimeout(recall);
+				if (Emarque.scrollTop >= Emarque.scrollHeight - 600)
+				{ 
+					Emarque.scrollTop = 0;
+				}
+				Emarque.scrollTop = Emarque.scrollTop + scrollSpeed;
+				if (move)
+				{
+					recall = setTimeout("marque()", 100);
+				}
+			}
+			function startscroll()
+			{
+				move = true;
+				marque();
+			}
+			function stopscroll()
+			{
+				move = false;
+			}
+		</script>
+	</head>
+	
+	<body onload = "initialize();">
+	<img class = "background" src = "images/background.jpg"/>
+		<h1 class = "heading"><span>Beautiful</span> Paintings</h1> <hr/>
+		<div id = "marque" onmouseout = "startscroll();" onmouseover = "stopscroll();">
+		<div id = "banner"><p class = "spacer"> </p>
+		<img class = "painting" src = "images/cabin1.jpg"/>
+		<img class = "painting" src = "images/cabin2.jpg"/>
+		<img class = "painting" src = "images/cabin3.jpg"/>
+		<img class = "painting" src = "images/nature1.jpg"/>
+		<img class = "painting" src = "images/nature2.jpg"/>
+		<img class = "painting" src = "images/nature3.jpg"/>
+		<img class = "painting" src = "images/nature4.jpg"/>
+		<img class = "painting" src = "images/nature5.jpg"/>
+		<img class = "painting" src = "images/nature6.jpg"/>
+		<img class = "painting" src = "images/nature7.jpg"/>
+		<img class = "painting" src = "images/nature8.jpg"/>
+		<img class = "painting" src = "images/kappaross.png"/>
+		
+		<p class = "spacer"> </p> </div>
+		</div><br/>
+	<ul>
+		<li><a href = "index.html" target = "_self"> Home </a></li>
+		<li><a href = "bobrossbg.html" target = "_self">Bobby Rossy's Cool Background </a></li>
+		<li><a href = "bobrosstl.html" target = "_self">A Basic Rundown of My Life</a> </li>
+		<li><a href = "bobrossPaintings.html"  class= "currentpage" target = "_self">Beautiful Paintings by Bobby Rossy</a></li>
+		<li><a href = "bobrossFamous.html" target = "_self">My Favorite Catchphrases and Cool Facts</a></li>
+	</ul>
+	</body>
+</html>

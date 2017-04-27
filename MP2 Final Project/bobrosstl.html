@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<!-- Kevin Lin -->
+<html>
+	<head>
+		<title>Timeline - Bob Ross</title>
+		<link rel = "stylesheet" href = "style.css" />
+		<style></style>
+		<script>
+		function initialize()
+		{	
+			timelineE = document.getElementById("tl");
+			years = ["October 29, 1942","Early 1960s","Late 1970s","Early 1980s","1983","1994","July 4, 1995"];
+			events = ["Born in Daytona Beach, Florida, and raised in Orlando, Florida.", "Discovered oil painting while he was enlisted in the U.S. Air Force","Learned the technique of 'wet-on-wet' from William Alexander","Bob Ross is given his own show on PBS based on the technique","<i>The Joy of Painting</i>, premiers on PBS", "<i>The Joy of Painting</i> is canceled because Bob Ross has lymphoma","Died at the age of 52 from lymphoma in New Smyrna Beach, Florida ;c",];
+			createtl();
+		}
+		function createtl()
+		{
+			var ctr = 0;
+			var idx = 0;
+			do
+			{
+				addRowToTable(1,years[idx],events[idx]);
+				ctr ++;
+				idx ++;
+			} while (ctr < events.length)
+		}
+		//modifed old function to work with time line requirements
+		function addRowToTable(howMany, cell1txt, cell2txt)
+			{
+				var ctr = 0;
+				while (ctr < howMany)
+				{
+					newRow = timelineE.insertRow();
+					addCellToRow(newRow, cell1txt + "</br>");
+					addCellToRow(newRow, cell2txt + "</br>");
+					ctr++;
+				}
+			}
+			function addCellToRow(theRow, txt)
+			{
+				newCell = theRow.insertCell();
+				newCell.innerHTML = txt;
+			}
+
+		</script>
+	</head>
+	
+	<body onload = "initialize();">
+	<img class = "background" src = "images/background.jpg"/>
+		<table style = "width:70%" id = "tl">
+			<h1 class = "heading"> Bob Ross Timeline</h1><hr/>
+			<tr>
+				<th> Years </th>
+				<th> Events </th>
+			</tr>
+		</table> <br/>
+		<hr/>
+	<ul>
+		<li><a href = "index.html" target = "_self"> Home </a></li>
+		<li><a href = "bobrossbg.html" target = "_self">Bobby Rossy's Cool Background </a></li>
+		<li><a href = "bobrosstl.html" class= "currentpage" target = "_self">A Basic Rundown of My Life</a> </li>
+		<li><a href = "bobrossPaintings.html" target = "_self">Beautiful Paintings by Bobby Rossy</a></li>
+		<li><a href = "bobrossFamous.html" target = "_self">My Favorite Catchphrases and Cool Facts</a></li>
+	</ul>
+	</body>
+
+</html>
